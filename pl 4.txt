@@ -1,0 +1,65 @@
+membro(3,[1,2,3,4])
+X=3 L=-1-,2,3,4
+fail //testa resto da lista
+membro(3,[2,3,4])
+X=3 L=-2-,3,4
+fail
+X=3 L=-3-,4
+true
+yes
+
+
+membro(5,[1,2,3])
+X=5 L=-1-,2,3
+fail
+X=5 L=-2-,3
+fail
+X=5 L=-3-
+fail
+no
+
+
+membro(X, [1,2,3])
+X=1 L=1|_
+yes
+//forçar backtrack desencadeia testar X=_ com resto de lista
+
+
+membro(3,L)
+X=3 L=3,_
+yes //porque é criada uma lista com 3 a cabeça
+//desencadeia L com _ em head e outra lista em L membro(3,_|L')
+chama(3,[_,3|_])
+yes //porque é o segundo elemento da lista
+
+e) quando o primeiro predicado é verdadeiro  execução acaba
+
+f) começava por testar o ultimo elemento da lista
+
+---------2
+a),b)
+
+A=1
+B=[2]
+C=[3,4]
+D=L=_
+
+2ª clausula porque nao e lista vazia
+D vai ficar com A|D ou seja 1
+passa a tail do primeiro termo como novo primeiro termo e D' fica agora com 2|D' 
+chama concatena([],[3,4],D)
+entra na 1ª clausula porque a primeira lista esta vazia,´, A lista fica [2|[3,4]
+backtrack, D' é agora [2|[3,4] ou seja D é [1|[2|[3,4]]] 
+
+
+c)
+concatena(L1,L2,[1,2,3])
+A=1
+B=_
+C=[1,2,3]
+D=2,3
+concatena([1|B],[1,2,3],[1|2,3])
+
+d) quando a primeira clausula é verdadeira, a execução termina
+
+e)o split seria feito pela ordem inversa. 
